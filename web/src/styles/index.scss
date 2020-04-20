@@ -1,3 +1,6 @@
+/* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
+@import "_color";
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -200,7 +203,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -345,7 +348,6 @@ ul {
   list-style-image: none;
 }
 ol {
-  margin-left: 1.45rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;

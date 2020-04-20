@@ -1,0 +1,93 @@
+@import "../styles/color";
+
+.pageContentHeader {
+  margin-bottom: 0;
+}
+
+.intro {
+  width: calc(100% - 1.876rem);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 60rem) {
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    column-gap: 0.625rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    flex: 0 1 auto;
+  }
+
+  @media (min-width: 48rem) {
+    column-gap: 1.25rem;
+    justify-content: flex-start;
+    width: calc(100% - 4rem);
+  }
+}
+
+.intro_content {
+  width: 100%;
+  order: 2;
+  text-align: center;
+
+  @media (min-width: 60rem) {
+    width: auto;
+    grid-column: 2/7;
+    padding: 0 2.5rem 0 0;
+    order: 1;
+    text-align: left;
+  }
+
+  @media (min-width: 30rem) {
+    padding-left: 0 3rem;
+  }
+}
+
+.description {
+  font-weight: 300;
+  margin-bottom: 1.25rem;
+
+  width: 100%;
+  order: 2;
+  text-align: center;
+
+  @media (min-width: 60rem) {
+    width: 50%;
+    padding: 0 2.5rem 0 0;
+    order: 1;
+    text-align: left;
+  }
+}
+
+.stats {
+  border-bottom: 1px solid $primary-dark;
+  padding-top: 0.625rem;
+
+  display: flex;
+  padding-bottom: 1.5626rem;
+  margin-bottom: 1.25rem;
+
+  flex-flow: wrap;
+
+  @media (min-width: 48rem) {
+    flex-flow: nowrap;
+  }
+}
+
+.intro_media {
+  width: calc(100% +1.876rem);
+  background-color: $secondary;
+  order: 1;
+  margin: 0 -0.938rem;
+
+  @media (min-width: 60rem) {
+    width: auto;
+    grid-column: 1/7;
+    flex: 1;
+    order: 2;
+    margin: 0;
+    padding-top: 3.125rem;
+  }
+}

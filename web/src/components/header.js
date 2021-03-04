@@ -16,12 +16,16 @@ const Header = () => {
     `)
     return(
         <header className={headerStyles.header}>
+            <div className={headerStyles.headerwrap}>
             <h1>
             <Link className={headerStyles.title} to='/'>
+                
         {data.site.siteMetadata.title}
         </Link>
             </h1>
+            </div>
             <nav>
+                <div className={headerStyles.subnav}>
                 <ul className={headerStyles.navList}>
                     <li>
                         <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/'>Home</Link>
@@ -33,6 +37,7 @@ const Header = () => {
                         <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/about'>About</Link>
                     </li>
                 </ul>
+                </div>
             </nav>
         </header>
     )

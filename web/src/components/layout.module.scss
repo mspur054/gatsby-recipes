@@ -1,15 +1,32 @@
 .container {
     margin: 0 auto;
-    max-width: 750px;
-    padding: 1rem;
+    // max-width: 750px;
+    padding: 1rem 0rem;
+    
     
     display: flex;
     flex-direction: column;
 
     min-height: 100vh;
+
+    @media (min-width: 64rem){
+        // padding-top: 5.125rem;
+    }
+
+ 
 }
 
 .content {
     flex-grow: 1;
-    
+
+}
+
+.page-content {
+    @media (min-width: 48rem){
+        // padding-top: 5.125rem;
+        width: calc(100% - 4rem);
+    }
+    width: calc(100% - 1.876rem);
+    margin-left: auto;
+    margin-right: auto;
 }

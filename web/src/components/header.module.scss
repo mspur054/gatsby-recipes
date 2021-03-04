@@ -2,6 +2,21 @@
 
 .header {
   padding: 1rem 0 3rem;
+  width: 100%;
+}
+
+.headerwrap {
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 48rem) {
+    width: calc(100% - 1.25rem);
+  }
+
+  @media (min-width: 64rem) {
+    padding: 0.625rem 1.25rem;
+  }
+
+  display: flex;
 }
 
 .title {
@@ -13,9 +28,12 @@
 .nav-item {
   color: #ffffff;
   font-size: 1.125rem;
-  margin-right: 1.3rem;
+  // margin-right: 1.3rem;
   text-decoration: none;
+
+
 }
+
 
 .nav-item:hover {
   color: $secondary;
@@ -25,10 +43,36 @@
   color: $secondary;
 }
 
-.nav-list {
-  padding: 1.25rem 1.25rem;
-  display: flex;
-  list-style-type: none;
-  margin: 0;
+nav {
   background-color: $primary;
+}
+
+.subnav {
+  @media (min-width: 48rem) {
+    width: calc(100%-4rem);
+  }
+}
+
+.subnav > * {
+  width: calc(100% - 1.876rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-list {
+  // padding: 1.25rem 1.25rem;
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+
+  @media (min-width: 64rem) {
+    padding-left: 6.875rem;
+    margin: 0 auto;
+  }
+
+  > li{
+    @media (min-width: 64rem) {
+      padding: 0.6875rem 1rem;
+    }
+  } 
 }

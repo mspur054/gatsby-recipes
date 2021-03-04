@@ -5,6 +5,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
 }
 body {
   margin: 0;
@@ -510,9 +511,9 @@ dt {
 th {
   font-weight: bold;
 }
-li {
-  margin-bottom: calc(1.45rem / 2);
-}
+// li {
+//   margin-bottom: calc(1.45rem / 2);
+// }
 ol li {
   padding-left: 0;
 }

@@ -1,7 +1,7 @@
 {
   "name": "sanity-gatsby-recipes",
   "version": "0.0.1",
-  "scripts":{
+  "scripts": {
     "dev": "lerna run dev --parallel"
   },
   "private": true,

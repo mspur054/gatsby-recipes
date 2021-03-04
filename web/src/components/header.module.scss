@@ -30,10 +30,20 @@
   font-size: 1.125rem;
   // margin-right: 1.3rem;
   text-decoration: none;
+  margin: 15px auto;
+  text-align: center;
 
 
 }
 
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer; 
+  color: rgba(255,255,255,0.8);
+  font-size: 24px;
+}
 
 .nav-item:hover {
   color: $secondary;

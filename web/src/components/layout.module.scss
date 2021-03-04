@@ -22,11 +22,18 @@
 }
 
 .page-content {
+    width: calc(100% - 1.876rem);
+    margin-left: auto;
+    margin-right: auto;
+
+
     @media (min-width: 48rem){
         // padding-top: 5.125rem;
         width: calc(100% - 4rem);
     }
-    width: calc(100% - 1.876rem);
-    margin-left: auto;
-    margin-right: auto;
+
+    @media (min-width: 85rem){
+        // padding-top: 5.125rem;
+        max-width: 85rem;
+    }
 }

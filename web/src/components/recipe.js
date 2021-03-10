@@ -1,5 +1,5 @@
 import React from "react"
-// import {buildImageObj, imageUrlFor} from '../lib/image-helper'
+import { buildImageObj, imageUrlFor } from '../lib/image-helper'
 
 import recipeStyles from "./recipe.module.scss"
 
@@ -17,13 +17,23 @@ const Recipe = props => {
             </div>
             <div className={recipeStyles.stats}>
               <div>
-                <label>PREP</label>
+                <span>PREP:</span>
                 <span>20 mins</span>
               </div>
             </div>
           </div>
           <div className={recipeStyles.intro_media}>
-            <p>IMG GOES HERE</p>
+            {mainImage && mainImage.asset && (
+              <img
+                src={imageUrlFor(buildImageObj(mainImage))
+                  .width(1200)
+                  .height(Math.floor((9 / 16) * 1200))
+                  .fit('crop')
+                  .auto('format')
+                  .url()}
+                alt={mainImage.alt}
+              />
+            )}
           </div>
         </article>
       </section>

@@ -85,9 +85,10 @@ export default createSchema({
           }
         },
         {
-          title: 'First made date',
-          name: 'dateMade',
-          type: 'date'
+          title: 'Published at',
+          name: 'publishedAt',
+          type: 'datetime',
+          description: 'This can be used to schedule post for publishing'
         },
         {
           title: 'Main Image',
@@ -136,5 +137,6 @@ export default createSchema({
     , mainImage,
     siteSettings,
     author,
-    bioPortableText]),
+    bioPortableText],
+    ),
 });

@@ -16,6 +16,7 @@ const Header = () => {
     `)
     return (
         <header className={headerStyles.header}>
+            <div className={headerStyles.headerBackground}>
             <div className={headerStyles.headerwrap}>
                 <h1>
                     <Link className={headerStyles.title} to='/'>
@@ -23,6 +24,7 @@ const Header = () => {
                         {data.site.siteMetadata.title}
                     </Link>
                 </h1>
+            </div>
             </div>
             <nav>
                 <span className="navbar-toggle" id="js-navbar-toggle">

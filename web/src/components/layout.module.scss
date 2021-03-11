@@ -1,7 +1,7 @@
 .container {
     margin: 0 auto;
     // max-width: 750px;
-    padding: 1rem 0rem;
+    padding: 0rem 0rem;
     
     
     display: flex;
@@ -25,7 +25,8 @@
     width: calc(100% - 1.876rem);
     margin-left: auto;
     margin-right: auto;
-
+    margin-top: 1.25rem;
+    
 
     @media (min-width: 48rem){
         // padding-top: 5.125rem;
@@ -36,4 +37,6 @@
         // padding-top: 5.125rem;
         max-width: 85rem;
     }
+
+    
 }

@@ -15,7 +15,7 @@ export const query = graphql`
       slug {
         current
       }
-      dateMade(formatString: "MMMM Do, YYYY")
+      publishedAt(formatString: "MMMM Do, YYYY")
 
       mainImage {
         caption

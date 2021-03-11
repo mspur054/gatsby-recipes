@@ -48,7 +48,7 @@ const RecipePage = () => {
             alt
           }
           description
-          dateMade
+          publishedAt
         }
       }
     }

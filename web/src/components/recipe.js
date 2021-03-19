@@ -1,28 +1,28 @@
 import React from "react"
 import { buildImageObj, imageUrlFor } from '../lib/image-helper'
 
-import recipeStyles from "./recipe.module.scss"
+import {pageContentHeader, intro, introContent, description, stats, introMedia} from "./recipe.module.scss"
 
 const Recipe = props => {
   const { name, dateMade, description, mainImage } = props
   return (
     <main>
-      <section className={recipeStyles.pageContentHeader}>
-        <article className={recipeStyles.intro}>
-          <div className={recipeStyles.intro_content}>
+      <section className={pageContentHeader}>
+        <article className={intro}>
+          <div className={introContent}>
             <h1>{name}</h1>
             <p>{dateMade}</p>
-            <div className={recipeStyles.description}>
+            <div className={description}>
               <p>{description}</p>
             </div>
-            <div className={recipeStyles.stats}>
+            <div className={stats}>
               <div>
                 <span>PREP:</span>
                 <span>20 mins</span>
               </div>
             </div>
           </div>
-          <div className={recipeStyles.intro_media}>
+          <div className={introMedia}>
             {mainImage && mainImage.asset && (
               <img
                 src={imageUrlFor(buildImageObj(mainImage))

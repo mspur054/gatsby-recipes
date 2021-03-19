@@ -3,13 +3,13 @@ import { Link } from "gatsby"
 
 import { imageUrlFor, buildImageObj } from '../lib/image-helper'
 
-import recipeStlyes from '../pages/recipes.module.scss'
+import {recipe as recipeStyle, item, textArea, header} from '../pages/recipes.module.scss'
 
 const RecipePreview = (props) => {
     const { slug, ...recipe } = props
     return (
-        <Link  className={recipeStlyes.recipe} to={`/recipes/${slug.current}`}>
-            <article className={recipeStlyes.item} >
+        <Link  className={recipeStyle} to={`/recipes/${slug.current}`}>
+            <article className={item} >
 
                 <figure>
                     {recipe.mainImage && recipe.mainImage.asset && (
@@ -21,8 +21,8 @@ const RecipePreview = (props) => {
                             alt={recipe.mainImage.alt} />
                     )}
                 </figure>
-                <div className={recipeStlyes.textArea}>
-                    <h2 className={recipeStlyes.header}>{recipe.name}</h2>
+                <div className={textArea}>
+                    <h2 className={header}>{recipe.name}</h2>
                     {/* <p>{node.description}</p> */}
                 </div>
             </article>

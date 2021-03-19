@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from "gatsby"
 
-import headerStyles from './header.module.scss'
+import HamburgerIcon from './hamburger'
+
+import {header, headerBackground, headerWrap, title, navbarToggle, subnav, topnav, navItem, icon, activeNavItem} from './header.module.scss'
 
 
 const Header = () => {
@@ -14,12 +16,22 @@ const Header = () => {
       }
     }
     `)
+
+
+    const controlHamburger = () => {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
     return (
-        <header className={headerStyles.header}>
-            <div className={headerStyles.headerBackground}>
-            <div className={headerStyles.headerwrap}>
+        <header className={header}>
+            <div className={headerBackground}>
+            <div className={headerWrap}>
                 <h1>
-                    <Link className={headerStyles.title} to='/'>
+                    <Link className={title} to='/'>
 
                         {data.site.siteMetadata.title}
                     </Link>
@@ -27,19 +39,25 @@ const Header = () => {
             </div>
             </div>
             <nav>
-                <span className="navbar-toggle" id="js-navbar-toggle">
+                <span className={navbarToggle} id="js-navbar-toggle">
                     <i className="las la-bars"></i>
+                    {/* <HamburgerIcon /> */}
                 </span>
-                <div className={headerStyles.subnav}>
-                    <ul className={headerStyles.navList}>
+
+                
+                <div className={subnav}>
+                    <ul className={topnav} id='myTopnav'>
                         <li>
-                            <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/'>Home</Link>
+                            <Link className={navItem} activeClassName={activeNavItem} to='/'>Home</Link>
                         </li>
                         <li>
-                            <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/recipes'>Recipes</Link>
+                            <Link className={navItem} activeClassName={activeNavItem} to='/recipes'>Recipes</Link>
                         </li>
                         <li>
-                            <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/about'>About</Link>
+                            <Link className={navItem} activeClassName={activeNavItem} to='/about'>About</Link>
+                        </li>
+                        <li className={icon} onClick={()=>controlHamburger}>
+                            <HamburgerIcon />
                         </li>
                     </ul>
                 </div>

@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import RecipePreview from '../components/recipe-preview'
 
-import {mapEdgesToNodes} from '../lib/misc-helpers'
-import recipeStlyes from './recipes.module.scss'
+import { mapEdgesToNodes } from '../lib/misc-helpers'
+import {recipesTop,filters, recipes } from './recipes.module.scss'
 
 
 
@@ -32,10 +32,16 @@ const RecipePage = () => {
     asset {
       _id
     }
-  }
+  }  
 
   query myRecipes{
-    recipes: allSanityRecipe {
+   
+    recipes: allSanityRecipe
+    (
+      limit: 12
+      sort: {fields: [publishedAt], order: DESC}
+      )  
+      {
       edges {
         node {
           id
@@ -60,17 +66,17 @@ const RecipePage = () => {
   return (
     <Layout>
       <h1>Recipes</h1>
-      <div className={recipeStlyes.recipes_top}>
-        <div className={recipeStlyes.filters}>
+      <div className={recipesTop}>
+        <div className={filters}>
           <h2>Filter Recipes</h2>
         </div>
-        <div className={recipeStlyes.recipes}>
-          {recipeNodes.map(( node) => {
-          return (
-              <RecipePreview {...node} key={node.id}/>
+        <div className={recipes}>
+          {recipeNodes.map((node) => {
+            return (
+              <RecipePreview {...node} key={node.id} />
             )
           })}
-          </div>
+        </div>
       </div>
     </Layout>
   )

@@ -16,7 +16,13 @@ export const query = graphql`
         current
       }
       publishedAt(formatString: "MMMM Do, YYYY")
-
+      prepTime
+      servings
+      ingredientsList {
+        _key
+        ingredients
+        sectionName
+      }
       mainImage {
         caption
         alt

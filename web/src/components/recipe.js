@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from 'gatsby'
 
 import { buildImageObj, imageUrlFor } from '../lib/image-helper'
+import Instructions from './intructions'
 
 import { pageContentHeader, intro, introContent, detailContent, description as descriptionStyle, stats, introMedia, recipeDetail, recipeIngredients, recipeInstructions, recipeIngredientsListBullets } from "./recipe.module.scss"
 
-
 const Recipe = props => {
-  const { name, dateMade, description, mainImage, prepTime, category, ingredientsList } = props
+  const { name, dateMade, description, mainImage, prepTime, category, ingredientsList, instructions } = props
 
 
   return (
@@ -63,21 +63,7 @@ const Recipe = props => {
               })}
             </aside>
             <article className={recipeInstructions}>
-              <h4>Instructions</h4>
-              {ingredientsList.map((ingredientsSection) => {
-                return (
-                  <div key={ingredientsSection._key}>
-                    {ingredientsList.length > 0 ? <p>{ingredientsSection.sectionName}</p> : "WOT"}
-                    <ul className={recipeIngredientsListBullets}>
-                      {ingredientsSection.ingredients.map((ingredient) => {
-                        return (<li key={ingredient}>
-                          {ingredient}
-                        </li>)
-                      })}
-                    </ul>
-                  </div>
-                )
-              })}
+              <Instructions instructions={instructions} />
             </article>
           </div>
         </section>

@@ -18,6 +18,7 @@ export const query = graphql`
       publishedAt(formatString: "MMMM Do, YYYY")
       prepTime
       servings
+      instructions
       ingredientsList {
         _key
         ingredients

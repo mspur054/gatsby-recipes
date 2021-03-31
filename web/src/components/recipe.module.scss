@@ -92,11 +92,17 @@
   }
 }
 
+
+.page-content {
+  background: $primary-light;
+}
+
+
 .detail-content {
   width: calc(100% - 1.876rem);
   margin-left: auto;
   margin-right: auto;
-  background: $primary-light;
+  
 
   
   @media (min-width: 85rem) {
@@ -145,6 +151,9 @@
 }
 
 .recipe-instructions{
+  margin-bottom: 2.5rem;
+  padding: 2.5rem .625rem 2.5rem 1.875rem;
+
   @media (min-width: 64rem) {
     grid-column: 5/12;
     padding: 4.375rem 7.188rem;

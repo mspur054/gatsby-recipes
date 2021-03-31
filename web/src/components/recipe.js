@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { buildImageObj, imageUrlFor } from '../lib/image-helper'
 import Instructions from './intructions'
 
-import { pageContentHeader, intro, introContent, detailContent, description as descriptionStyle, stats, introMedia, recipeDetail, recipeIngredients, recipeInstructions, recipeIngredientsListBullets } from "./recipe.module.scss"
+import { pageContentHeader, intro, pageContent, introContent, detailContent, description as descriptionStyle, stats, introMedia, recipeDetail, recipeIngredients, recipeInstructions, recipeIngredientsListBullets } from "./recipe.module.scss"
 
 const Recipe = props => {
   const { name, dateMade, description, mainImage, prepTime, category, ingredientsList, instructions } = props
@@ -42,8 +42,9 @@ const Recipe = props => {
           </div>
         </article>
       </section>
-      <div className={detailContent}>
-        <section>
+      
+        <section className={pageContent}>
+        <div className={detailContent}>
           <div className={recipeDetail}>
             <aside className={recipeIngredients}>
               <h4>Ingredients</h4>
@@ -66,8 +67,9 @@ const Recipe = props => {
               <Instructions instructions={instructions} />
             </article>
           </div>
+          </div>
         </section>
-      </div>
+      
     </main>
   )
 }

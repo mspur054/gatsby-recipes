@@ -187,4 +187,30 @@
 .recipe-instructions-list-bullets {
   padding-left: 1.75rem;
   margin-left: .313rem;
+  counter-reset: numList;
+
+  list-style: none;
+
+  display: block;
+
+  li{
+    position: relative;
+  }
+
+  li:before {
+    top: .188rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: -2.25rem;
+    font: 400 .875rem/1;
+
+    border: .063rem solid #000;
+    border-radius: 50%;
+
+    counter-increment: numList;
+    content: counter(numList)
+  }
 }

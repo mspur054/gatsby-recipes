@@ -14,10 +14,10 @@
     display: grid;
     column-gap: 0.625rem;
 
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    flex: 0 1 auto;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-flow: row wrap;
+    // flex: 0 1 auto;
   }
 
   @media (min-width: 48rem) {
@@ -41,7 +41,7 @@
   }
 
   @media (min-width: 30rem) {
-    padding-left: 0 3rem;
+    padding-left: 0rem 3rem;
   }
 }
 
@@ -84,10 +84,101 @@
 
   @media (min-width: 60rem) {
     width: auto;
-    grid-column: 1/7;
+    grid-column: 7/13;
     flex: 1;
     order: 2;
     margin: 0;
     padding-top: 3.125rem;
   }
 }
+
+.detail-content {
+  width: calc(100% - 1.876rem);
+  margin-left: auto;
+  margin-right: auto;
+  background: $primary-light;
+
+  
+  @media (min-width: 85rem) {
+    max-width: 85rem;
+  }
+
+  @media (min-width: 48rem) {
+    width: calc(100% - 4rem);
+    padding-top: 3.125rem;
+  }
+}
+
+.recipe-detail {
+  display: flex;
+
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column-gap: 1.25rem;
+  }
+
+  
+}
+
+
+.recipe-ingredients{
+  p {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 64rem) {
+    grid-column: 2/5;
+  }
+  @media (min-width: 48rem) {
+    margin-bottom: 3.75rem;
+    padding: 4.375rem .625rem 4.375rem 0;
+    width: auto;
+    grid-column: 1/5;
+  }
+}
+
+.recipe-instructions{
+  @media (min-width: 64rem) {
+    grid-column: 5/12;
+    padding: 4.375rem 7.188rem;
+  }
+
+    @media (min-width: 48rem){
+      width: auto;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 8;
+      grid-column: 5/13;
+    }
+
+}
+
+
+.recipe-ingredients-list-bullets {
+  margin-top: 0;
+  padding-left: 1.875rem;
+
+  @media (min-width: 48rem) {
+    font-size: 1.125rem;
+  }
+
+  list-style: none;
+
+  li {
+    font-size: 0.88rem;
+    display: list-item;
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+
+  li:before {
+    content: "-";
+    position: absolute;
+    margin-left: -1.875rem;
+  }
+}
+
+
+

@@ -1,10 +1,15 @@
 import React from "react"
+import { graphql } from 'gatsby'
+
 import { buildImageObj, imageUrlFor } from '../lib/image-helper'
 
-import {pageContentHeader, intro, introContent, description, stats, introMedia} from "./recipe.module.scss"
+import { pageContentHeader, intro, introContent, detailContent, description as descriptionStyle, stats, introMedia, recipeDetail, recipeIngredients, recipeInstructions, recipeIngredientsListBullets } from "./recipe.module.scss"
+
 
 const Recipe = props => {
-  const { name, dateMade, description, mainImage } = props
+  const { name, dateMade, description, mainImage, prepTime, category, ingredientsList } = props
+
+
   return (
     <main>
       <section className={pageContentHeader}>
@@ -12,13 +17,13 @@ const Recipe = props => {
           <div className={introContent}>
             <h1>{name}</h1>
             <p>{dateMade}</p>
-            <div className={description}>
+            <div className={descriptionStyle}>
               <p>{description}</p>
             </div>
             <div className={stats}>
               <div>
                 <span>PREP:</span>
-                <span>20 mins</span>
+                <span>{prepTime}</span>
               </div>
             </div>
           </div>
@@ -37,11 +42,46 @@ const Recipe = props => {
           </div>
         </article>
       </section>
-      <section>
-        <div>
-          <p>This is where the instructions and ingredients go</p>
-        </div>
-      </section>
+      <div className={detailContent}>
+        <section>
+          <div className={recipeDetail}>
+            <aside className={recipeIngredients}>
+              <h4>Ingredients</h4>
+              {ingredientsList.map((ingredientsSection) => {
+                return (
+                  <div key={ingredientsSection._key}>
+                    {ingredientsList.length > 0 ? <p>{ingredientsSection.sectionName}</p> : "WOT"}
+                    <ul className={recipeIngredientsListBullets}>
+                      {ingredientsSection.ingredients.map((ingredient) => {
+                        return (<li key={ingredient}>
+                          {ingredient}
+                        </li>)
+                      })}
+                    </ul>
+                  </div>
+                )
+              })}
+            </aside>
+            <article className={recipeInstructions}>
+              <h4>Instructions</h4>
+              {ingredientsList.map((ingredientsSection) => {
+                return (
+                  <div key={ingredientsSection._key}>
+                    {ingredientsList.length > 0 ? <p>{ingredientsSection.sectionName}</p> : "WOT"}
+                    <ul className={recipeIngredientsListBullets}>
+                      {ingredientsSection.ingredients.map((ingredient) => {
+                        return (<li key={ingredient}>
+                          {ingredient}
+                        </li>)
+                      })}
+                    </ul>
+                  </div>
+                )
+              })}
+            </article>
+          </div>
+        </section>
+      </div>
     </main>
   )
 }

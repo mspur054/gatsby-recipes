@@ -21,17 +21,24 @@
 
 }
 
-.page-content {
-  
 
+
+.page-content {
+   
     @media (min-width: 48rem){
-        // padding-top: 5.125rem;
         width: calc(100% - 4rem);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.25rem;
     }
 
+
     @media (min-width: 85rem){
+        //TODO add max with but have it center
         // padding-top: 5.125rem;
         max-width: 85rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     

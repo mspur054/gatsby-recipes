@@ -40,6 +40,7 @@ const RecipePage = () => {
     (
       limit: 12
       sort: {fields: [publishedAt], order: DESC}
+      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
       )  
       {
       edges {
@@ -55,6 +56,7 @@ const RecipePage = () => {
           }
           description
           publishedAt
+          category
         }
       }
     }

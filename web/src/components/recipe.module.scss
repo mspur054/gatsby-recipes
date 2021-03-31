@@ -110,7 +110,7 @@
 }
 
 .recipe-detail {
-  display: flex;
+  //display: flex;
 
 
   @media (min-width: 48rem) {
@@ -124,6 +124,10 @@
 
 
 .recipe-ingredients{
+  margin-bottom: 1.875rem;
+  padding: 2.5rem 0;
+  
+  
   p {
     font-weight: 500;
     margin-bottom: 0;
@@ -195,6 +199,7 @@
 
   li{
     position: relative;
+    margin-bottom: 1.125rem;
   }
 
   li:before {

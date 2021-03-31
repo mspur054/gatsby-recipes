@@ -7,11 +7,11 @@
   "author": "Matthew Spurdle <matthew@spurdle.dev>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity start",
+    "dev": "sanity start --playground",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "test": "sanity check",
     "lint": "eslint .",
-    "graphql-deploy": "sanity graphql deploy --playground"
+    "graphql-deploy": "sanity graphql deploy"
   },
   "keywords": [
     "sanity"
